@@ -32,7 +32,7 @@ function getDatabaseRows(phpResponse) {
     }
 
     htmlOutput += "</table>";
-    $("#table_container").html(htmlOutput);
+    $("#table").html(htmlOutput);
 }
 
 function getRoles(nums) {

@@ -37,7 +37,7 @@ div.center_content {
 div#container {
     height: 100%;
     display: grid;
-    grid-template-rows: 15% 15% 70%;
+    grid-template-rows: 0% 30% 70%;
 }
 
 
@@ -45,18 +45,31 @@ div#container {
 /* --- Form --- */
 /* ------------ */
 div#form_container {  /* .center_content */
-    flex-direction: row;
+    flex-direction: column;
 }
 
-div#form_container > select {
+h1 {
+    margin-bottom: 4px;
+    text-shadow: 1px 1px 4px black;
+}
+
+select, input {
     padding: 8px 16px;
     font-size: 18px;
+}
+
+select {
+    margin-right: 8px;
 }
 
 
 /* ------------- */
 /* --- Table --- */
 /* ------------- */
+div#table_container {  /* .center_content */
+    flex-direction: column;
+}
+
 table, th, td {
     border-collapse: collapse;
 }
@@ -64,6 +77,7 @@ table, th, td {
 table {
     text-align: center;
     border: 2px solid black;
+    box-shadow: 1px 1px 4px black;
 }
 
 th {
