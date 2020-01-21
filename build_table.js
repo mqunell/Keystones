@@ -14,7 +14,6 @@ var classColors = {
 };
 
 function getDatabaseRows(phpResponse) {
-    //console.log(phpResponse);
     var htmlOutput = "<table><tr><th>Player</th><th>Role(s)</th><th>Character</th><th>Keystone</th><th>Highest completed</th></tr>";
 
     var rows = phpResponse.split("~");
@@ -56,5 +55,5 @@ function getRoles(nums) {
     return roles;
 }
 
-//sendAjaxRequest(null, "query_db.php", {callbackFunctionReturn: getDatabaseRows});
-getDatabaseRows("Bravo,Touka,Druid,2,,,,,,~Bravo,ßrâvø,DemonHunter,12,,,,Temple of Sethraliss,10,~Ilan,Kohi,Shaman,23,,The MOTHERLODE!!,13,,,~Jeremy,Demondude,Warlock,2,,,,Temple of Sethraliss,10,~Jeremy,Whitelight,Paladin,12,,,,Waycrest Manor,6,~Ken,Magerina,Mage,2,,Atal'Dazar,9,Temple of Sethraliss,10,~Ken,Thagurok,DeathKnight,1,,Siege of Boralus,10,Siege of Boralus,10,~Kyle,Aessthetics,Druid,13,,,,Temple of Sethraliss,10,~Matt,Maios,DeathKnight,2,,,,,,~Matt,Matchi,Monk,123,,The MOTHERLODE!!,8,Temple of Sethraliss,10,~Sarah,Risá,Mage,2,,Freehold,8,Waycrest Manor,6");
+sendAjaxRequest(null, "query_db.php", {callbackFunctionReturn: getDatabaseRows});
+//getDatabaseRows("Bravo,Touka,Druid,2,,,,,,~Bravo,ßrâvø,DemonHunter,12,,,,Temple of Sethraliss,10,~Ilan,Kohi,Shaman,23,,The MOTHERLODE!!,13,,,~Jeremy,Demondude,Warlock,2,,,,Temple of Sethraliss,10,~Jeremy,Whitelight,Paladin,12,,,,Waycrest Manor,6,~Ken,Magerina,Mage,2,,Atal'Dazar,9,Temple of Sethraliss,10,~Ken,Thagurok,DeathKnight,1,,Siege of Boralus,10,Siege of Boralus,10,~Kyle,Aessthetics,Druid,13,,,,Temple of Sethraliss,10,~Matt,Maios,DeathKnight,2,,,,,,~Matt,Matchi,Monk,123,,The MOTHERLODE!!,8,Temple of Sethraliss,10,~Sarah,Risá,Mage,2,,Freehold,8,Waycrest Manor,6");
