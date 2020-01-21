@@ -1,0 +1,97 @@
+/* ---------------- */
+/* --- Document --- */
+/* ---------------- */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html, body, section {
+    height: 100%;
+}
+
+body {
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    text-shadow: 1px 1px 1px black;
+
+    /* Auto-scaling background */
+    height: 100%;
+    background-image: url("nzoth.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+
+/* --------------- */
+/* --- General --- */
+/* --------------- */
+div.center_content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+div#container {
+    height: 100%;
+    display: grid;
+    grid-template-rows: 15% 15% 70%;
+}
+
+
+/* ------------ */
+/* --- Form --- */
+/* ------------ */
+div#form_container {  /* .center_content */
+    flex-direction: row;
+}
+
+div#form_container > select {
+    padding: 8px 16px;
+    font-size: 18px;
+}
+
+
+/* ------------- */
+/* --- Table --- */
+/* ------------- */
+table, th, td {
+    border-collapse: collapse;
+}
+
+table {
+    text-align: center;
+    border: 2px solid black;
+}
+
+th {
+    color: black;
+    text-shadow: none;
+    background-color: white;
+    border-bottom: 2px solid black;
+}
+
+th:first-child {
+    border-right: 2px solid black;
+}
+
+th, td {
+    padding: 8px;
+}
+
+th:nth-child(2), th:nth-child(3), th:nth-child(4), td:not(:last-child) {
+    border-right: 1px solid black;
+}
+
+td {
+    border-bottom: 1px solid black;
+}
+
+td:first-child {
+    color: black;
+    text-shadow: none;
+    background-color: white;
+    border-right: 2px solid black;
+}
