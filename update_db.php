@@ -8,8 +8,8 @@ $db_connection = new DB_Connection();
 
 // Retrieve AJAX payload
 $char_name = $_POST["char_name"];
-$dungeon = $_POST["max_dungeon"];
-$level = $_POST["max_level"];
+$dungeon = $_POST["dungeon"];
+$level = $_POST["level"];
 $key_max = $_POST["key_max"];
 
 $sql = ($key_max == "key") ? "update Keystones set KeyDungeon = ?, KeyLevel = ? where CharName = ?" : "update Keystones set MaxDungeon = ?, MaxLevel = ? where CharName = ?";
