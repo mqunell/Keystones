@@ -19,9 +19,9 @@
 
                 <!-- Form -->
                 <div id="form_container" class="center_content">
-                    <h1>Update Highest Completed</h1>
+                    <h1>Update</h1>
                     
-                    <div>
+                    <div class="center_content">
                         <!-- Character -->
                         <select id="select_char" tabindex="1">
                             <option value="Aessthetics">Aessthetics</option>
@@ -75,9 +75,21 @@
                             <option value="20">20</option>
                         </select>
 
-                        <!-- Submit -->
-                        <input type="submit" value="Update" onclick="updateCharacter()">
+                        <!-- Keystone/Highest -->
+                        <div id="radio_container">
+                            <div>
+                                <input id="key" type="radio" name="key_max" value="key">
+                                <label for="key">Keystone</label>
+                            </div>
+                            <div>
+                                <input id="max" type="radio" name="key_max" value="max">
+                                <label for="max">Highest</label>
+                            </div>
+                        </div>
                     </div>
+
+                    <!-- Submit -->
+                    <input type="submit" value="Update" onclick="updateTable()">
                 </div>
 
                 <!-- Table -->

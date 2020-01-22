@@ -53,6 +53,10 @@ h1 {
     text-shadow: 1px 1px 4px black;
 }
 
+div#form_container > div {
+    margin-bottom: 8px;
+}
+
 select, input {
     padding: 8px 16px;
     font-size: 18px;
@@ -60,6 +64,10 @@ select, input {
 
 select {
     margin-right: 8px;
+}
+
+select:hover, label:hover {
+    cursor: pointer;
 }
 
 

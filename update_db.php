@@ -4,17 +4,20 @@ error_reporting(E_ALL);
 
 include($_SERVER['DOCUMENT_ROOT'] . "/Keystones/db_connection.php");
 
+$db_connection = new DB_Connection();
+
 // Retrieve AJAX payload
 $char_name = $_POST["char_name"];
-$max_dungeon = $_POST["max_dungeon"];
-$max_level = $_POST["max_level"];
+$dungeon = $_POST["max_dungeon"];
+$level = $_POST["max_level"];
+$key_max = $_POST["key_max"];
 
-$db_connection = new DB_Connection();
+$sql = ($key_max == "key") ? "update Keystones set KeyDungeon = ?, KeyLevel = ? where CharName = ?" : "update Keystones set MaxDungeon = ?, MaxLevel = ? where CharName = ?";
 
 // Update the table
 $db_connection->run_ins_up_del(
-    "update Keystones set MaxDungeon = ?, MaxLevel = ? where CharName = ?",
-    [$max_dungeon, $max_level, $char_name],
+    $sql,
+    [$dungeon, $level, $char_name],
     "update_db.php"
 );
 ?>
