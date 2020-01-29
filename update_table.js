@@ -14,5 +14,6 @@ function updateTable() {
 }
 
 function updateTableCallback() {
-    alert("Refresh the page to update the table; auto-refreshing not implemented yet");
+    // Refresh the table
+    getDatabaseRows();
 }
