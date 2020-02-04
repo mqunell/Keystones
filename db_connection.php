@@ -47,8 +47,8 @@ class DB_Connection {
      * 
      * @param sql (string) the SQL statement with '?' in place of parameters
      * @param params (string array) the parameters to insert into the statement
-     * @param task (string) the task to perform ("row_count", "fetch_column", "fetch_all")
-     * @param calling_function (string) the name of the calling function
+     * @param task (string) the task to perform ("fetch_column", "fetch_all")
+     * @param calling_function (string) the name of the calling function for errors/debugging
      * @return (int/string/array) Output based on the task
      */
     function run_select($sql, $params, $task, $calling_function) {
@@ -63,10 +63,7 @@ class DB_Connection {
                 $stmt->execute();
             }
 
-            if ($task == "row_count") {
-                $output = $stmt->rowCount();
-            }
-            else if ($task == "fetch_column") {
+            if ($task == "fetch_column") {
                 $output = $stmt->fetchColumn();
             }
             else if ($task == "fetch_all") {
