@@ -37,17 +37,30 @@ div.center_content {
 div#container {
     height: 100%;
     display: grid;
-    grid-template-rows: 0% 30% 70%;
+    grid-template-rows: 30% 20% 50%;
+}
+
+
+/* --------------- */
+/* --- Affixes --- */
+/* --------------- */
+div#affixes_container, div#form_container {  /* .center_content */
+    flex-direction: column;
+}
+
+div#affixes > p {
+    max-width: 800px;
+    margin-bottom: 8px;
+}
+
+a:link, a:visited {
+    color: white;
 }
 
 
 /* ------------ */
 /* --- Form --- */
 /* ------------ */
-div#form_container {  /* .center_content */
-    flex-direction: column;
-}
-
 h1 {
     margin-bottom: 4px;
     text-shadow: 1px 1px 4px black;

@@ -9,13 +9,21 @@ $db = new DB_Connection();
 /*
  * Call the specified function
  * 
+ * affixes() gets and returns JSON affix data from Raider.io
  * build_form() returns all Toons.ToonName
  * build_table() returns all Keystone data from a SQL join of Toons and Keystones
  * update_table() either inserts into or updates Keystones with the HTML form data
  */ 
+if ($_POST["task"] == "affixes")      { affixes(); }
 if ($_POST["task"] == "build_form")   { build_form($db); }
 if ($_POST["task"] == "build_table")  { build_table($db); }
 if ($_POST["task"] == "update_table") { update_table($db); }
+
+
+function affixes() {
+    $response = file_get_contents("https://raider.io/api/v1/mythic-plus/affixes?region=us");
+    echo($response);
+}
 
 function build_form($db) {
     $rows = $db->run_select(

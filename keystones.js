@@ -19,6 +19,25 @@ var classColors = {
     Warrior: "rgb(199, 156, 110)"
 };
 
+
+function getAffixes() {
+    var formData = new FormData();
+    formData.append("task", "affixes");
+
+    sendAjaxRequest(formData, "keystones.php", {callbackFunctionReturn: getAffixesCallback});
+}
+
+function getAffixesCallback(phpResponse) {
+    var output = "";
+
+    json = JSON.parse(phpResponse);
+    json["affix_details"].forEach(function(affix) {
+        output += `<p><b><a href=${affix["wowhead_url"]}>${affix["name"]}</a></b>: ${affix["description"]}</p>`
+    });
+
+    $("#affixes").html(output);
+}
+
 function buildForm() {
     var formData = new FormData();
     formData.append("task", "build_form");
@@ -108,6 +127,6 @@ function getRoles(nums) {
     return roles;
 }
 
-
+getAffixes();
 buildForm();
 buildTable();
