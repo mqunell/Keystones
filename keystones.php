@@ -39,13 +39,13 @@ function build_form($db) {
         $output .= "~";
     }
 
-    $output = substr($output, 0, (strlen($output) - 2));
+    $output = substr($output, 0, (strlen($output) - 1));
     echo($output);
 }
 
 function build_table($db) {
     $rows = $db->run_select(
-        "select Toons.RealName, Toons.ToonName, Toons.ToonClass, Toons.ToonRoles, Keystones.KeyDungeon, Keystones.KeyLevel, Keystones.MaxDungeon, Keystones.MaxLevel from Toons right join Keystones on Toons.ToonName = Keystones.ToonName;",
+        "select Toons.RealName, Toons.ToonName, Toons.ToonRealm, Toons.ToonClass, Toons.ToonRoles, Keystones.KeyDungeon, Keystones.KeyLevel, Keystones.MaxDungeon, Keystones.MaxLevel from Toons right join Keystones on Toons.ToonName = Keystones.ToonName;",
         null,
         "fetch_all",
         "build_table"
@@ -55,6 +55,7 @@ function build_table($db) {
     foreach ($rows as $row) {
         $output .= $row["RealName"]   . ",";
         $output .= $row["ToonName"]   . ",";
+        $output .= $row["ToonRealm"]  . ",";
         $output .= $row["ToonClass"]  . ",";
         $output .= $row["ToonRoles"]  . ",";
         $output .= $row["KeyDungeon"] . ",";

@@ -64,20 +64,20 @@ function buildTable() {
 }
 
 function buildTableCallback(phpResponse) {
-    var htmlOutput = "<table><tr><th>Player</th><th>Role(s)</th><th>Character</th><th>Keystone</th><th>Highest completed</th></tr>";
+    var htmlOutput = "<table><tr><th>Player</th><th>Character</th><th>Role(s)</th><th>Keystone</th><th>Highest completed</th></tr>";
 
     var rows = phpResponse.split("~");
     for (var row of rows) {
-        // 0:RealName, 1:ToonName, 2:ToonClass, 3:ToonRoles, 4:KeyDungeon, 5:KeyLevel, 6:MaxDungeon, 7:MaxLevel
+        // 0:RealName, 1:ToonName, 2:ToonRealm, 3:ToonClass, 4:ToonRoles, 5:KeyDungeon, 6:KeyLevel, 7:MaxDungeon, 8:MaxLevel
         r = row.split(",");
 
         if (!(r[4] == "" && r[6] == "")) {
-            htmlOutput += "<tr style=\"background-color: " + classColors[r[2]] + "\">";
+            htmlOutput += "<tr style=\"background-color: " + classColors[r[3]] + "\">";
             htmlOutput += "<td>" + r[0] + "</td>";
-            htmlOutput += "<td>" + getRoles(r[3]) + "</td>";
-            htmlOutput += "<td>" + r[1] + "</td>";
-            htmlOutput += "<td>" + r[4] + " " + r[5] + "</td>";
-            htmlOutput += "<td>" + r[6] + " " + r[7] + "</td>";
+            htmlOutput += `<td><a href="https://raider.io/characters/us/${r[2]}/${r[1]}">${r[1]}</a></td>`;
+            htmlOutput += "<td>" + getRoles(r[4]) + "</td>";
+            htmlOutput += "<td>" + r[5] + " " + r[6] + "</td>";
+            htmlOutput += "<td>" + r[7] + " " + r[8] + "</td>";
             htmlOutput += "</tr>";
         }
     }
